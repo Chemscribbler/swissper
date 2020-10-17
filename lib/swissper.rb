@@ -42,7 +42,7 @@ module Swissper
     end
 
     def delta(a, b)
-      0 - (delta_value(a) - delta_value(b))**2
+      0 - abs((delta_value(a) - delta_value(b)))*3 - side_delta(a,b)
     end
 
     def targets(player)
@@ -54,6 +54,15 @@ module Swissper
       return bye_delta if player == Swissper::Bye
 
       0
+    end
+
+    def side_delta(player1, player2)
+      if player1.side_balance * player2.side_balance > 0
+        a = min([player1.side_balance, player2.side_balance])
+        return 8**a
+      else
+        return 0
+      end
     end
 
     def excluded_opponents(player)
