@@ -3,7 +3,7 @@ require 'swissper/player'
 require 'swissper/bye'
 require 'graph_matching'
 
-module Swissper_sss
+module Swissper
   def self.pair(players, options = {})
     Pairer.new(options).pair(players)
   end
