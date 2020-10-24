@@ -11,7 +11,7 @@ module Swissper
   class Pairer
     def initialize(options = {})
       @delta_key = options[:delta_key] || :delta
-      @side_key = option[:side_key] || 0
+      @side_key = option[:side_key] || :side_bal
       @exclude_key = options[:exclude_key] || :exclude
       @bye_delta = options[:bye_delta] || -1
     end

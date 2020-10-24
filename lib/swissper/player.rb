@@ -4,6 +4,7 @@ module Swissper
 
     def initialize
       @delta = 0
+      @side_bal = 0
       @exclude = []
     end
   end
